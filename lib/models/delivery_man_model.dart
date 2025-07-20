@@ -52,7 +52,7 @@ class DeliveryManModel extends UserModel {
       vehicleNumber: map['vehicleNumber'] ?? '',
       licenseNumber: map['licenseNumber'] ?? '',
       deliveryStatus: DeliveryManStatus.values.firstWhere(
-        (status) => status.toString() == 'DeliveryManStatus.${map['deliveryStatus']}',
+            (status) => status.toString() == 'DeliveryManStatus.${map['deliveryStatus']}',
         orElse: () => DeliveryManStatus.available,
       ),
       rating: map['rating']?.toDouble() ?? 0.0,
@@ -88,7 +88,43 @@ class DeliveryManModel extends UserModel {
     return baseMap;
   }
 
-  DeliveryManModel copyWith({
+  @override
+  UserModel copyWith({
+    String? id,
+    String? email,
+    String? name,
+    String? phoneNumber,
+    String? profileImageUrl,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    bool? isActive,
+    UserRole? role,
+  }) {
+    return DeliveryManModel(
+      id: id ?? this.id,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      profileImageUrl: profileImageUrl ?? this.profileImageUrl,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      isActive: isActive ?? this.isActive,
+      vehicleType: this.vehicleType,
+      vehicleNumber: this.vehicleNumber,
+      licenseNumber: this.licenseNumber,
+      deliveryStatus: this.deliveryStatus,
+      rating: this.rating,
+      totalDeliveries: this.totalDeliveries,
+      completedDeliveries: this.completedDeliveries,
+      assignedParcels: this.assignedParcels,
+      lastActiveAt: this.lastActiveAt,
+      currentLatitude: this.currentLatitude,
+      currentLongitude: this.currentLongitude,
+    );
+  }
+
+  // Add a new method specifically for DeliveryManModel
+  DeliveryManModel copyWithDeliveryMan({
     String? id,
     String? email,
     String? name,
@@ -137,8 +173,9 @@ class DeliveryManModel extends UserModel {
     return (completedDeliveries / totalDeliveries) * 100;
   }
 
-  bool get isOnline => 
+  bool get isOnline =>
       deliveryStatus != DeliveryManStatus.offline &&
-      lastActiveAt != null &&
-      DateTime.now().difference(lastActiveAt!).inMinutes < 15;
+          lastActiveAt != null &&
+          DateTime.now().difference(lastActiveAt!).inMinutes < 15;
 }
+

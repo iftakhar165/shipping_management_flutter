@@ -323,7 +323,7 @@ class _AnalyticsDashboardScreenState extends State<AnalyticsDashboardScreen>
                 interval: 5,
                 getTitlesWidget: (value, meta) {
                   return SideTitleWidget(
-                    axisSide: meta.axisSide,
+                    meta: meta,
                     child: Text(
                       '${value.toInt()}',
                       style: const TextStyle(
