@@ -7,12 +7,15 @@ import 'package:shipping_management_app/routes/app_routes.dart';
 import 'package:shipping_management_app/utils/theme.dart';
 import 'package:shipping_management_app/services/auth_service.dart';
 import 'package:shipping_management_app/controllers/auth_controller.dart';
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   
   // Initialize Firebase
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   
   // Initialize Firebase App Check
   await FirebaseAppCheck.instance.activate(
