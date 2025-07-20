@@ -258,6 +258,7 @@ class ParcelModel {
     String? trackingNumber,
     String? senderId,
     String? receiverId,
+    String? businessId,
     String? receiverName,
     String? receiverPhone,
     String? receiverEmail,
@@ -283,6 +284,7 @@ class ParcelModel {
   }) {
     return ParcelModel(
       id: id ?? this.id,
+      businessId: businessId?? this.businessId,
       trackingNumber: trackingNumber ?? this.trackingNumber,
       senderId: senderId ?? this.senderId,
       receiverId: receiverId ?? this.receiverId,

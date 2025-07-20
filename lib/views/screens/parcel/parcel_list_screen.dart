@@ -478,7 +478,6 @@ class _ParcelListScreenState extends State<ParcelListScreen>
           controller: _searchController,
           label: 'Search',
           hintText: 'Enter tracking number...',
-          autofocus: true,
         ),
         actions: [
           TextButton(
