@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "436288038287",
+    "project_id": "shippingmanagementapp",
+    "storage_bucket": "shippingmanagementapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:436288038287:android:58f84f987d34ee307497fa",
+        "android_client_info": {
+          "package_name": "com.example.shipping_management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "436288038287-9j0hdtev9ir5keolpal0c6nraiu73kpe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shipping_management_app",
+            "certificate_hash": "4f6ed25a6d77f4131a919e920853ae9a79ce2b35"
+          }
+        },
+        {
+          "client_id": "436288038287-k7mr55o4cp29nst51dpvleour7drcsf5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8nl1cE5ivW6l8_FVI_x9LrBU-8cBcYWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "436288038287-k7mr55o4cp29nst51dpvleour7drcsf5.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "436288038287-tmna5or1mce7jj0o9icomdp9vdo1i0hb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shippingManagementApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
