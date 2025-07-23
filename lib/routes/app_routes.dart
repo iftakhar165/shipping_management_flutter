@@ -12,6 +12,7 @@ import 'package:shipping_management_app/views/screens/notifications/notification
 import 'package:shipping_management_app/views/screens/profile/profile_screen.dart';
 import 'package:shipping_management_app/views/screens/analytics/analytics_dashboard_screen.dart';
 import 'package:shipping_management_app/views/screens/tracking/real_time_tracking_screen.dart';
+import '../../../xyz_customer_app_24/libraries/sheba_pay_sdk/lib/screens/spay_home/presentation/spay_home_demo_screen.dart';
 
 class AppRoutes {
   static const String splash = '/splash';
@@ -27,6 +28,7 @@ class AppRoutes {
   static const String profile = '/profile';
   static const String analytics = '/analytics';
   static const String tracking = '/tracking';
+  static const String spayDemo = '/spay-demo';
 
   static List<GetPage> get routes => [
     GetPage(
@@ -106,6 +108,12 @@ class AppRoutes {
       page: () => RealTimeTrackingScreen(
         parcelId: Get.parameters['parcelId'] ?? '',
       ),
+      transition: Transition.cupertino,
+      transitionDuration: const Duration(milliseconds: 300),
+    ),
+    GetPage(
+      name: spayDemo,
+      page: () => const SpayHomeDemoScreen(),
       transition: Transition.cupertino,
       transitionDuration: const Duration(milliseconds: 300),
     ),

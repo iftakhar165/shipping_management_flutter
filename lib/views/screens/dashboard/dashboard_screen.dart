@@ -454,17 +454,19 @@ class _DashboardScreenState extends State<DashboardScreen>
         'title': 'Analytics',
         'icon': Icons.analytics_outlined,
         'color': AppTheme.secondaryColor,
-        'gradient': LinearGradient(
+        'gradient': const LinearGradient(
           colors: [AppTheme.secondaryColor, AppTheme.accentColor],
         ),
         'route': AppRoutes.analytics,
       },
       {
-        'title': 'Support',
-        'icon': Icons.support_agent,
-        'color': AppTheme.warningColor,
-        'gradient': AppTheme.warningGradient,
-        'route': null,
+        'title': 'Sheba Pay Demo',
+        'icon': Icons.payment,
+        'color': AppTheme.accentColor,
+        'gradient': const LinearGradient(
+          colors: [AppTheme.accentColor, AppTheme.primaryColor],
+        ),
+        'route': AppRoutes.spayDemo,
       },
     ];
 
@@ -479,7 +481,7 @@ class _DashboardScreenState extends State<DashboardScreen>
         action['gradient'] as LinearGradient,
         () => action['route'] != null 
             ? Get.toNamed(action['route'] as String)
-            : _showSupportDialog(),
+            : {},
       ),
     );
   }
